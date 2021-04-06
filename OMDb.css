@@ -1,3 +1,41 @@
 * {
     font-family: 'Lato', sans-serif;
+    box-sizing: content-box;
 }
+
+body {
+    background-color: #d7dbde;
+}
+
+.input-group{
+    max-width: 850px;
+}
+
+#navbar_search {
+    max-width: 675px;
+}
+
+.movies-well {
+    padding: 35px;
+    background-color: #d7dbde;
+    border-radius: 40px;
+    box-shadow: 13px 13px 20px #a8abad, -13px -13px 20px #ebf1f5;
+}
+
+.card-img-top {
+    border-radius: 40px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    overflow: hidden;
+}
+
+
+.card {
+    background-color: #d7dbde;
+    border-radius: 40px;
+    box-shadow: inset 5px 5px 12px #a8abad, inset -5px -5px 12px #ebf1f5;
+}
+
+
