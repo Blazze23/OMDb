@@ -16,6 +16,7 @@ body {
 }
 
 .movies-well {
+    margin-top: 100px !important;
     padding: 35px;
     background-color: #d7dbde;
     border-radius: 40px;
@@ -37,10 +38,11 @@ body {
 }
 
 .series-well {
+    margin-top: 100px !important;
     padding: 35px;
     background-color: #d7dbde;
     border-radius: 40px;
-    box-shadow: inset 13px 13px 20px #a8abad, inset -13px -13px 20px #ebf1f5;
+    box-shadow:  13px 13px 20px #a8abad,  -13px -13px 20px #ebf1f5;
 }
 
 
