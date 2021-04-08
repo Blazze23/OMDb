@@ -23,7 +23,7 @@ body {
 }
 
 .card-img-top {
-    border-radius: 40px;
+    border-radius: 25px;
     padding-left: 0px;
     padding-right: 0px;
     margin-left: 0px;
@@ -33,9 +33,14 @@ body {
 
 
 .card {
+    border-radius: 25px;
+}
+
+.series-well {
+    padding: 35px;
     background-color: #d7dbde;
     border-radius: 40px;
-    box-shadow: inset 5px 5px 12px #a8abad, inset -5px -5px 12px #ebf1f5;
+    box-shadow: inset 13px 13px 20px #a8abad, inset -13px -13px 20px #ebf1f5;
 }
 
 
