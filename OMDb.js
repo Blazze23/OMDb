@@ -48,9 +48,9 @@ function titleInfo() {
                 if(json.Type === "movie") {
                     $("#titleName").html(json.Title);
                     $("#titleYear").html(json.Year);
-                    $("#ratingIMDB").html(json.Ratings[0].Source);
+                    $("#ratingIMDB").html("IMDB Rating");
                     $("#ratingMeta").html("Metascore");
-                    $("#valueIMDB").html(json.Ratings[0].Value);
+                    $("#valueIMDB").html(json.imdbRating);
                     $("#valueMeta").html(json.Metascore);
                     $("#titlePoster").attr("src", json.Poster);
                     $("#titleDirector").html(json.Director);
@@ -69,8 +69,8 @@ function titleInfo() {
                 } else if(json.Type === "series") {
                     $("#titleName").html(json.Title);
                     $("#titleYear").html(json.Year);
-                    $("#ratingIMDB").html(json.Ratings[0].Source);
-                    $("#valueIMDB").html(json.Ratings[0].Value);
+                    $("#ratingIMDB").html("IMDB Rating");
+                    $("#valueIMDB").html(json.imdbRating);
                     $("#titlePoster").attr("src", json.Poster);
                     $("#titleDirector").html(json.Director);
                     $("#titleWriter").html(json.Writer);
