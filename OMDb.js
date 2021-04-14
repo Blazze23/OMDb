@@ -45,25 +45,46 @@ function titleInfo() {
     let lokal_titleID = localStorage.getItem("titleID");
     $.getJSON("https://omdbapi.com/?apikey=4194023&i="+lokal_titleID, function(json) {
                 console.log(json);
-                $("#titleName").html(json.Title);
-                $("#titleYear").html(json.Year);
-                $("#ratingIMDB").html(json.Ratings[0].Source);
-                $("#ratingMetta").html(json.Ratings[2].Source);
-                $("#valueIMDB").html(json.Ratings[0].Value);
-                $("#valueMetta").html(json.Ratings[2].Value);
-                $("#titlePoster").attr("src", json.Poster);
-                $("#titleDirector").html(json.Director);
-                $("#titleWriter").html(json.Writer);
-                $("#titleActors").html(json.Actors);
-                $("#titleGenre").html(json.Genre);
-                $("#titleDuration").html(json.Runtime);
-                $("#titleRated").html(json.Rated);
-                $("#titleGenre").html(json.Genre);
-                $("#titlePlot").html(json.Plot);
-                $("#titleAwards").html(json.Awards);
-                $("#titleBox").html(json.BoxOffice);
-                $("#titleCountry").html(json.Country);
-                $("#titleLanguage").html(json.Language);
-                $("#titleProduction").html(json.Production);
+                if(json.Type === "movie") {
+                    $("#titleName").html(json.Title);
+                    $("#titleYear").html(json.Year);
+                    $("#ratingIMDB").html(json.Ratings[0].Source);
+                    $("#ratingMeta").html("Metascore");
+                    $("#valueIMDB").html(json.Ratings[0].Value);
+                    $("#valueMeta").html(json.Metascore);
+                    $("#titlePoster").attr("src", json.Poster);
+                    $("#titleDirector").html(json.Director);
+                    $("#titleWriter").html(json.Writer);
+                    $("#titleActors").html(json.Actors);
+                    $("#titleGenre").html(json.Genre);
+                    $("#titleDuration").html(json.Runtime);
+                    $("#titleRated").html(json.Rated);
+                    $("#titleGenre").html(json.Genre);
+                    $("#titlePlot").html(json.Plot);
+                    $("#titleAwards").html(json.Awards);
+                    $("#titleBox").html(json.BoxOffice);
+                    $("#titleCountry").html(json.Country);
+                    $("#titleLanguage").html(json.Language);
+                    $("#titleProduction").html(json.Production);
+                } else if(json.Type === "series") {
+                    $("#titleName").html(json.Title);
+                    $("#titleYear").html(json.Year);
+                    $("#ratingIMDB").html(json.Ratings[0].Source);
+                    $("#valueIMDB").html(json.Ratings[0].Value);
+                    $("#titlePoster").attr("src", json.Poster);
+                    $("#titleDirector").html(json.Director);
+                    $("#titleWriter").html(json.Writer);
+                    $("#titleActors").html(json.Actors);
+                    $("#titleGenre").html(json.Genre);
+                    $("#titleDuration").html(json.Runtime);
+                    $("#titleRated").html(json.Rated);
+                    $("#titleGenre").html(json.Genre);
+                    $("#titlePlot").html(json.Plot);
+                    $("#titleAwards").html(json.Awards);
+                    $("#titleBox").html("N/A");
+                    $("#titleCountry").html(json.Country);
+                    $("#titleLanguage").html(json.Language);
+                    $("#titleProduction").html("N/A");
+                }
             });
 }
