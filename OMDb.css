@@ -7,6 +7,14 @@ body {
     background-color: #d7dbde;
 }
 
+nav a, .btn.btn-outline-warning, .nav-link {
+    transition: all 0.7s ease-in-out;
+}
+
+nav a:hover {
+    color: #ffc107 !important;
+}
+
 .input-group{
     max-width: 850px;
 }
@@ -16,7 +24,7 @@ body {
 }
 
 .movies-well {
-    margin-top: 100px !important;
+    margin-top: 50px !important;
     padding: 35px;
     background-color: #d7dbde;
     border-radius: 40px;
@@ -32,17 +40,30 @@ body {
     overflow: hidden;
 }
 
-
 .card {
     border-radius: 25px;
 }
 
 .series-well {
-    margin-top: 100px !important;
+    margin-top: 50px !important;
     padding: 35px;
     background-color: #d7dbde;
     border-radius: 40px;
     box-shadow:  13px 13px 20px #a8abad,  -13px -13px 20px #ebf1f5;
+}
+
+#bookmarkLogo {
+    color: #ffc107;
+    cursor: pointer;
+}
+
+#heartLogo {
+    color: #ffc107;
+    transition: all 0.7s ease-in-out;
+    cursor: pointer;
+}
+#heartLogo:hover {
+    color: rgb(253, 40, 40);
 }
 
 

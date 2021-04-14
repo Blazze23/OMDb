@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OMDb | Search results</title>
+    <title>OMDb | Title info</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="OMDb.css" />
     
   </head>
-  <body onload="search();">
+  <body onload="titleInfo();">
     <header>
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -69,28 +69,53 @@
     </header>
     <main>
       <div class="container movies-well mt-5 mb-5">
-          <h1 class="text-center">Search results</h1>
+          <div class="row mt-5">
+            <div class="col-lg-3">
+                <small>Title:</small>
+                <h1 class="" id="titleName"></h1>
+            </div>
+            <div class="col-lg-2">
+                <small>Year of release:</small>
+                <h1 class="" id="titleYear"></h1>
+            </div>
+            <div class="col-lg-5">
+                <div class="row">
+                    <div class="col-lg-6"><small class="pe-2">Ratings:</small><small id="ratingIMDB"></small></div>
+                    <div class="col-lg-5"><small id="ratingMetta"></small></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6"><h1 class="" id="valueIMDB"></h1></div>
+                    <div class="col-lg-5"><h1 class="" id="valueMetta"></h1></div>
+                </div>
+            </div>
+            <div class="col-lg-1">
+                <span class="fa-stack fa-2x"><i class="fas fa-bookmark fa-stack-2x" id="bookmarkLogo"></i><i class="fas fa-heart fa-stack-1x fa-inverse" id="heartLogo"></i></span> 
+            </div>
+          </div>
         <div class="row mt-5">
-          <div class="col-lg-12">
-             <div class="table-responsive mx-auto">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Title</th>
-                            <th scope="col">Year</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Poster</th>
-                            <th scope="col">IMDbID</th>
-                            <th scope="col">Details</th>
-                        </tr>
-                    </thead>
-                    <tbody id="searh_table">
-                      <tr class="text-center">
-                        <td colspan="6">No search results</td>
-                      </tr>
-                    </tbody>
-                </table>
-             </div> 
+          <div class="col-lg-3">
+            <img src="http://placehold.it/266x400" alt="Poster" class="img-fluid" id="titlePoster" style="max-height: 400px; border-radius: 20px;">
+          </div>
+          <div class="col-lg-5">
+            <h4>About</h4>
+            <hr>
+            <small class="text-center pe-2">Director:</small><small><strong id="titleDirector"></strong></small><br>
+            <small class="text-center pe-2">Writer:</small><small><strong id="titleWriter"></strong></small><br>
+            <small class="text-center pe-2">Stars:</small><small><strong id="titleActors"></strong></small><br>
+            <small class="text-center pe-2">Genre:</small><small><strong id="titleGenre"></strong></small><br>
+            <small class="text-center pe-2">Duration:</small><small><strong id="titleDuration"></strong></small><br>
+            <small class="text-center pe-2">Rated:</small><small><strong id="titleRated"></strong></small><br><br>
+            <p class=" text-center">Storyline:</p>
+            <p id="titlePlot"></p>
+          </div>
+          <div class="col-lg-3">
+              <h4>Details</h4>
+              <hr>
+            <small class="text-center pe-2">Awards:</small><small><strong id="titleAwards"></strong></small><br>
+            <small class="text-center pe-2">Box Office:</small><small><strong id="titleBox"></strong></small><br>
+            <small class="text-center pe-2">Country:</small><small><strong id="titleCountry"></strong></small><br>
+            <small class="text-center pe-2">Language:</small><small><strong id="titleLanguage"></strong></small><br>
+            <small class="text-center pe-2">Production:</small><small><strong id="titleProduction"></strong></small><br>
           </div>
         </div>
       </div>
