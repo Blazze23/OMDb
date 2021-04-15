@@ -7,7 +7,7 @@ body {
     background-color: #d7dbde;
 }
 
-nav a, .btn.btn-outline-warning, .nav-link {
+nav a, .btn.btn-outline-warning, .nav-link, #info_btn {
     transition: all 0.7s ease-in-out;
 }
 
@@ -66,4 +66,27 @@ nav a:hover {
     color: rgb(253, 40, 40);
 }
 
+.fa-star {
+    color: #ffc107;
+}
+
+.fa-percentage {
+    color: #0ed40e;
+}
+
+#info_btn:hover {
+   background-color: #212529;
+   border: #212529;
+   color: #ffc107;
+}
+
+.fa-info-circle:hover {
+    color: #ffc107;
+}
+
+#card-well {
+    background-color: #d7dbde;
+    border-radius: 40px;
+    box-shadow: inset 13px 13px 20px #a8abad, inset -13px -13px 20px #ebf1f5;
+}
 

@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="OMDb.css" />
     
   </head>
-  <body>
+  <body onload="addToFavorites();">
     <header>
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -71,8 +71,11 @@
       <div class="container movies-well mt-5">
           <h1 class="text-center">Your favorite movies and series</h1>
         <div class="row mt-5">
-          <div class="col-lg-12">
-           
+          <div class="col-lg-6">
+            <div id="favoritesCard"></div>
+          </div>
+          <div class="col-lg-4">
+            <h4>Rate this title:</h4>
           </div>
         </div>
       </div>
