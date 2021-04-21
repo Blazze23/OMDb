@@ -101,6 +101,7 @@ function addToFavoritesSetup() {
         localStorage.setItem("favorites", json_favorites);
         location.href = "favorites.html";
     } else {
+        // Proveriti da li vec postoji u favoritima - filter funkcija
         console.log(favorites);
         console.log(lokal_favorites);
         lokal_favorites.push(favorites[0]);
@@ -117,5 +118,43 @@ function addToFavorites() {
     $.each(lokal_favorites, function(key, value) {
         console.log(value);
         $("#favoritesCard").append("<div class='card p-3 mb-4' id='card-well'><div class='row'><div class='col-lg-6'><div class='card-body'><h5 class='card-title'>"+value.Title+"</h5><p class='card-text'>Director: "+value.Director+"</p><p class='card-text'>Stars: "+value.Actors+"</p><p class='card-text'>Rating: "+value.imdbRating+"<i class='fas fa-star ps-2'></i></p></div></div><div class='col-lg-5'><img src='"+value.Poster+"' class='card-img-top img-fluid' style='max-width: 150px' alt='Poster'></div></div></div>");
+    });
+}
+
+function topMovies() {
+    $.getJSON("movies.json", function(json) {
+        console.log(json);
+        $.each(json, function(key, value) {
+            if(key == 10) {
+                return false;
+            }
+            $.getJSON("https://omdbapi.com/?apikey=4194023&i="+value.id, function(json_top10) {
+                console.log(json_top10);
+                if(value.rank <=5) {
+                    $("#movies_card5").append("<div class='col-lg-2 col-md-3 col-sm-4 col-6'><div class='card p-3 mb-4' id='card-well'><div class='row d-flex justify-content-center'><div class='col-lg-12'><div class='card-body px-3 py-2' style='min-height:420px'><img src='"+json_top10.Poster+"' class='card-img-top img-fluid mb-4 mx-auto' style='max-height: 214px, width: auto' alt='Poster'><h6 class='card-title'>"+json_top10.Title+"</h6><small class='card-text'>Rank: "+value.rank+"</small><br><small class='card-text'>Rating: "+json_top10.imdbRating+"<i class='fas fa-star ps-2'></i></small></div></div></div></div></div>");
+                } else {
+                    $("#movies_card10").append("<div class='col-lg-2 col-md-3 col-sm-4 col-6'><div class='card p-3 mb-4' id='card-well'><div class='row d-flex justify-content-center'><div class='col-lg-12'><div class='card-body px-3 py-2' style='min-height:420px'><img src='"+json_top10.Poster+"' class='card-img-top img-fluid mb-4 mx-auto' style='max-height: 214px, width: auto' alt='Poster'><h6 class='card-title'>"+json_top10.Title+"</h6><small class='card-text'>Rank: "+value.rank+"</small><br><small class='card-text'>Rating: "+json_top10.imdbRating+"<i class='fas fa-star ps-2'></i></small></div></div></div></div></div>");
+                }
+            });
+        });
+    });
+}
+
+function topSeries() {
+    $.getJSON("series.json", function(json) {
+        console.log(json);
+        $.each(json, function(key, value) {
+            if(key == 10) {
+                return false;
+            }
+            $.getJSON("https://omdbapi.com/?apikey=4194023&i="+value.id, function(json_top10) {
+                console.log(json_top10);
+                if(value.rank <=5) {
+                    $("#series_card5").append("<div class='col-lg-2 col-md-3 col-sm-4 col-6'><div class='card p-3 mb-4' id='card-well'><div class='row d-flex justify-content-center'><div class='col-lg-12'><div class='card-body px-3 py-2' style='min-height:420px'><img src='"+json_top10.Poster+"' class='card-img-top img-fluid mb-4 mx-auto' style='max-height: 214px, width: auto' alt='Poster'><h6 class='card-title'>"+json_top10.Title+"</h6><small class='card-text'>Rank: "+value.rank+"</small><br><small class='card-text'>Rating: "+json_top10.imdbRating+"<i class='fas fa-star ps-2'></i></small></div></div></div></div></div>");
+                } else {
+                    $("#series_card10").append("<div class='col-lg-2 col-md-3 col-sm-4 col-6'><div class='card p-3 mb-4' id='card-well'><div class='row d-flex justify-content-center'><div class='col-lg-12'><div class='card-body px-3 py-2' style='min-height:420px'><img src='"+json_top10.Poster+"' class='card-img-top img-fluid mb-4 mx-auto' style='max-height: 214px, width: auto' alt='Poster'><h6 class='card-title'>"+json_top10.Title+"</h6><small class='card-text'>Rank: "+value.rank+"</small><br><small class='card-text'>Rating: "+json_top10.imdbRating+"<i class='fas fa-star ps-2'></i></small></div></div></div></div></div>");
+                }
+            });
+        });
     });
 }
